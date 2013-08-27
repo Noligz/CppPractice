@@ -42,6 +42,8 @@ void Combination(const char* src)
 	{
 		Combination(src, i, dest, 0);
 	}
+
+	delete[] dest;
 }
 
 void main()
