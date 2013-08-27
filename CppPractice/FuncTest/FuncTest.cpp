@@ -13,9 +13,15 @@ void f1()
 	//u       GuncTest
 }
 
+void f2()
+{
+	char c [] = "c";
+	cout << strlen(c) << endl;
+}
+
 void main()
 {
-	f1();
+	f2();
 
 	system("pause");
 }
