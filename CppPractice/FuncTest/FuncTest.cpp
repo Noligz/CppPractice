@@ -36,6 +36,16 @@ int IfABS(int n)
 		return -n;
 }
 
+unsigned BitMulti(unsigned a, unsigned b)
+{
+	unsigned ret = 0;
+	for (int i = 0; i < 32; i++)
+	{
+		(b & 1 << i) && (ret += a << i);
+	}
+	return ret;
+}
+
 void main()
 {
 	clock_t startClock, finishClock;
@@ -45,7 +55,10 @@ void main()
 	{
 		//int b = abs(-345);
 		//int a=BitABS(-345);
-		int c = IfABS(-345);
+		//int c = IfABS(-345);
+		int a = 3099, b = 6877;
+		//unsigned c = BitMulti(a, b);
+		unsigned d = a * b;
 	}
 	
 
