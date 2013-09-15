@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.20623.1 VSUPREVIEW
+VisualStudioVersion = 12.0.20827.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FuncTest", "FuncTest\FuncTest.vcxproj", "{C532C3A1-6AFC-45F8-8C57-540D1A217926}"
 EndProject
@@ -28,6 +28,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FriendCircle", "FriendCircle\FriendCircle.vcxproj", "{2023E96C-64BF-479E-A9EA-E87EA75397EB}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Heap", "Heap\Heap.vcxproj", "{CA2EADC4-59C2-47AF-97FD-3831D247D005}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SumItUp", "SumItUp\SumItUp.vcxproj", "{6281C102-6636-46ED-8FFE-857D5133C9D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +89,10 @@ Global
 		{CA2EADC4-59C2-47AF-97FD-3831D247D005}.Debug|Win32.Build.0 = Debug|Win32
 		{CA2EADC4-59C2-47AF-97FD-3831D247D005}.Release|Win32.ActiveCfg = Release|Win32
 		{CA2EADC4-59C2-47AF-97FD-3831D247D005}.Release|Win32.Build.0 = Release|Win32
+		{6281C102-6636-46ED-8FFE-857D5133C9D4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6281C102-6636-46ED-8FFE-857D5133C9D4}.Debug|Win32.Build.0 = Debug|Win32
+		{6281C102-6636-46ED-8FFE-857D5133C9D4}.Release|Win32.ActiveCfg = Release|Win32
+		{6281C102-6636-46ED-8FFE-857D5133C9D4}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
