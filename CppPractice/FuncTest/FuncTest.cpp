@@ -46,6 +46,15 @@ unsigned BitMulti(unsigned a, unsigned b)
 	return ret;
 }
 
+void BasicTypeBits()
+{
+	cout << "bool: " << sizeof(bool) * 8 << endl;
+	cout << "char: " << sizeof(char) * 8 << endl;
+	cout << "int: " << sizeof(int) * 8 << endl;
+	cout << "long: " << sizeof(long) * 8 << endl;
+	cout << "long long: " << sizeof(long long) * 8 << endl;
+}
+
 void main()
 {
 	clock_t startClock, finishClock;
@@ -53,17 +62,19 @@ void main()
 
 	for (size_t i = 0; i < 100000000; i++)
 	{
-		//int b = abs(-345);
-		//int a=BitABS(-345);
-		//int c = IfABS(-345);
-		int a = 3099, b = 6877;
-		//unsigned c = BitMulti(a, b);
-		unsigned d = a * b;
+		////int b = abs(-345);
+		////int a=BitABS(-345);
+		////int c = IfABS(-345);
+		//int a = 3099, b = 6877;
+		////unsigned c = BitMulti(a, b);
+		//unsigned d = a * b;
 	}
+
+	BasicTypeBits();
 	
 
 	finishClock = clock();
-	cout << endl << "Duration: " << (double) (finishClock - startClock) / 1000 << endl;
+	cout << endl << "Duration: " << (double) (finishClock - startClock) << " ms" << endl;
 
 	system("pause");
 }
