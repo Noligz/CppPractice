@@ -1,14 +1,13 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
-char* ParsePath(char* src)
+string ParsePath(const string& str)
 {
-	int srcLength = strlen(src);
-	//if (str == NULL || *str == '\0')
-	//	return NULL;
-	//int srcLength = strlen(str);
-	//char* src = new char[srcLength + 1];
-	//strcpy_s(src, srcLength, str);
+	if (str == "")
+		return "";
+	int srcLength = str.length();
+	string src = str;
 
 	char spliter = '\\', dot = '.', mark = '\0';
 
@@ -37,23 +36,21 @@ char* ParsePath(char* src)
 		}
 	}
 
-	char* result = new char[srcLength];
+	string result = "";
 	int resultIdx = 0;
 	for (int i = 0; i < srcLength; i++)
 	{
 		if (src[i] != mark)
-			result[resultIdx++] = src[i];
+			result += src[i];
 	}
-	result[resultIdx] = '\0';
-	//delete [] src;
 	return result;
 }
 
 void main()
 {
-	char path [] = "D:\\z\\v\\.\\a.u\\..\\..\\q\\..\\asd.txt";
-	char* result = ParsePath(path);
-	if (result != NULL)
+	string path = "D:\\z\\v\\.\\a.u\\..\\..\\q\\..\\asd.txt";
+	string result = ParsePath(path);
+	if (result != "")
 		cout << result << endl;
 	else
 		cout << "invalid path" << endl;
