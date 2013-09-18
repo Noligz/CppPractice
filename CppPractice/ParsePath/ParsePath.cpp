@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 
 string ParsePath(const string& str)
@@ -46,10 +47,51 @@ string ParsePath(const string& str)
 	return result;
 }
 
+string ParsePath2(const string& src)
+{
+	if (src == "")
+		return "";
+	vector<string> data;
+	char spliter = '\\', dot = '.';
+	int length = src.length();
+	for (int i = 0; i < length; i++)
+	{
+		while (i < length && src[i] == spliter)
+			i++;
+		if (i < length)
+		{
+			int peek = i + 1;
+			while (peek < length && src[peek] != spliter)
+				peek++;
+			string str = src.substr(i, peek - i);
+			if (str == "..")
+			{
+				if (data.empty())
+					return "";
+				data.pop_back();
+			}
+			else if (str != ".")
+				data.push_back(str);
+			i = peek;
+		}
+	}
+	
+	if (!data.empty())
+	{
+		vector<string>::iterator iter = data.begin();
+		string result = *iter++;
+		for (; iter != data.end(); iter++)
+			result += '\\' + *iter;
+		return result;
+	}
+	else
+		return "";
+}
+
 void main()
 {
-	string path = "D:\\z\\v\\.\\a.u\\..\\..\\q\\..\\asd.txt";
-	string result = ParsePath(path);
+	string path = "D:\\zxc\\\\..\\\\\\cvb\\";// "D:\\z\\v\\.\\a.u\\..\\..\\q\\..\\asd.txt";
+	string result = ParsePath2(path);
 	if (result != "")
 		cout << result << endl;
 	else
