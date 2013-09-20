@@ -55,6 +55,15 @@ void BasicTypeBits()
 	cout << "long long: " << sizeof(long long) * 8 << endl;
 }
 
+void MinMaxInt()
+{
+	int intBitCount = sizeof(int) * 8;
+	int maxInt = (1 << (intBitCount - 1)) - 1;
+	int minInt = 1 << (intBitCount - 1);
+	cout << maxInt << "\t" << minInt << endl;
+	cout << (int)0x7FFFFFFF << "\t" << (int)0x80000000 << endl;
+}
+
 void main()
 {
 	clock_t startClock, finishClock;
@@ -70,8 +79,8 @@ void main()
 		//unsigned d = a * b;
 	}
 
-	BasicTypeBits();
-	
+	//BasicTypeBits();
+	MinMaxInt();
 
 	finishClock = clock();
 	cout << endl << "Duration: " << (double) (finishClock - startClock) << " ms" << endl;
