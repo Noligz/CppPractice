@@ -42,11 +42,13 @@ int CountOf1Between0ToN(int num)
 	int step = 1;
 	while (num / step > 0)
 	{
-		count += num / (10 * step) * step;
+		count += num / (10 * step) * step;//num从0到num / (10 * step)，当前位出现1的次数
 
 		int currStepNumber = num % (10 * step) / step;	//当前位的数字
+
+		//num从num / (10 * step)到num，当前位出现1的次数
 		if (currStepNumber == 1)
-			count += num % step + 1;
+			count += num % step + 1;//+1是因为应考虑当前位为1，后面全是0的数字
 		else if (currStepNumber > 1)
 			count += step;
 
