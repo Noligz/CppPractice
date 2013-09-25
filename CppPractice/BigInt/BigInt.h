@@ -4,12 +4,12 @@
 #define BIGINT
 
 #define MAXBIT 20
-#define JINZHI 10000
+#define JINZHI 1000000000
 
 class BigInt
 {
 private:
-	unsigned int* m_element;
+	unsigned long long* m_element;
 	bool m_isRefined;
 
 private:
@@ -19,8 +19,8 @@ public:
 	BigInt(const BigInt& x);
 	BigInt(char* n);
 	~BigInt();
-	int GetElement(int i) const;
-	void SetElenemt(int i, int n);
+	long long GetElement(long long i) const;
+	void SetElenemt(long long i, long long n);
 	bool isNegtive() const;
 	void Refine();
 	void ToComplement();
