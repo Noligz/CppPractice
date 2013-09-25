@@ -14,24 +14,33 @@ private:
 
 private:
 	void Init();
-public:
-	BigInt();
-	BigInt(const BigInt& x);
-	BigInt(char* n);
-	~BigInt();
-	long long GetElement(long long i) const;
-	void SetElenemt(long long i, long long n);
-	bool isNegtive() const;
 	void Refine();
 	void ToComplement();
 	void ToOposite();
+	long long GetElement(long long i) const;
+	void SetElenemt(long long i, long long n);
+public:
+	BigInt();
+	BigInt(const BigInt&);
+	BigInt(char* n);
+	BigInt(long long);
+	virtual ~BigInt();
+	bool isNegtive() const;
 	BigInt& Abs() const;
-	void Print() const;
-	BigInt& operator+ (const BigInt& x) const;
-	BigInt& operator- (const BigInt& x) const;
-	BigInt& operator* (const BigInt& x) const;
-	BigInt& operator/ (const BigInt& x) const;
-	BigInt& operator% (const BigInt& x) const;
+	BigInt& operator + (const BigInt&) const;
+	BigInt& operator - (const BigInt&) const;
+	BigInt& operator * (const BigInt&) const;
+	BigInt& operator / (const BigInt&) const;
+	BigInt& operator % (const BigInt&) const;
+	BigInt& operator = (const BigInt&) const;
+	bool operator == (const BigInt& x) const;
+	bool operator > (const BigInt& x) const;
+	bool operator >= (const BigInt& x) const;
+	bool operator < (const BigInt& x) const;
+	bool operator <= (const BigInt& x) const;
+	friend std::istream& operator >> (std::istream&, BigInt&);
+	friend std::ostream& operator << (std::ostream&, const BigInt&);
+	friend BigInt& abs(const BigInt&);
 };
 
 #endif

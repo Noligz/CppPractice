@@ -1,3 +1,4 @@
+#include <iostream>
 #include "BigInt.h"
 
 void BigInt::Init()
@@ -20,6 +21,15 @@ BigInt::BigInt(const BigInt& x)
 	for(long long i = 0; i < MAXBIT; i++)
 		m_element[i] = x.GetElement(i);
 	Refine();
+}
+
+BigInt::BigInt(long long smallInt)
+{
+	Init();
+	long long tmp = abs(smallInt);
+	m_element[0] = tmp;
+	if (smallInt<0)
+		ToOposite();
 }
 
 inline bool BigInt::isNegtive() const
@@ -125,29 +135,30 @@ void BigInt::ToOposite()
 	ToComplement();
 }
 
-void BigInt::Print() const
+std::ostream& operator << (std::ostream& out, const BigInt& b) 
 {
-	if(isNegtive())
+	if(b.isNegtive())
 	{
-		std::cout << "-";
-		BigInt tmp(*this);
+		out << "-";
+		BigInt tmp(b);
 		tmp.ToOposite();
-		tmp.Print();
+		out << tmp;
 	}
 	else
 	{
 		long long i = MAXBIT - 2;
-		while(m_element[i] == 0 && i > 0)
+		while (b.m_element[i] == 0 && i > 0)
 			i--;
-		std::cout << m_element[i] << " ";
+		out << b.m_element[i] << " ";
 		i--;
 		for(; i >= 0; i--)
 		{
-			for(long long tmp = JINZHI / 10; m_element[i] / tmp == 0 && tmp > 1; tmp /= 10)
-				std::cout << 0;
-			std::cout << m_element[i] << " ";
+			for (long long tmp = JINZHI / 10; b.m_element[i] / tmp == 0 && tmp > 1; tmp /= 10)
+				out << 0;
+			out << b.m_element[i] << " ";
 		}
 	}
+	return out;
 }
 
 BigInt& BigInt::Abs() const
@@ -202,4 +213,9 @@ BigInt& BigInt::operator*(const BigInt& x) const
 		result->SetElenemt(MAXBIT - 1, JINZHI - 1);
 
 	return *result;
+}
+
+std::istream& operator >> (std::istream& in, BigInt& b)
+{
+	return in;
 }
