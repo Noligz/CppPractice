@@ -15,12 +15,11 @@ inline BigInt::BigInt()
 
 BigInt::BigInt(const BigInt& x)
 {
-	if(this != &x)
-		delete[] m_element;
 	m_element = new unsigned int[MAXBIT];
 	m_isRefined = false;
 	for(int i = 0; i < MAXBIT; i++)
 		m_element[i] = x.GetElement(i);
+	Refine();
 }
 
 inline bool BigInt::isNegtive() const

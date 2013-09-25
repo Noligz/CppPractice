@@ -3,7 +3,7 @@
 #ifndef BIGINT 
 #define BIGINT
 
-#define MAXBIT 8
+#define MAXBIT 20
 #define JINZHI 10000
 
 class BigInt
