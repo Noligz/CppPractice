@@ -20,6 +20,15 @@ void f2()
 	cout << strlen(c) << endl;
 }
 
+void f3()
+{
+	const char *p1 = "hello";
+	char* const p2 = "world";
+	p1++;//valid
+	//p2++; //invalid
+	p2[2] = 'l';//invalid, 因为"world"在常量区
+}
+
 int BitABS(int n)
 {
 	int shiftRight = sizeof(n) * 8 - 1;
@@ -48,20 +57,73 @@ unsigned BitMulti(unsigned a, unsigned b)
 
 void BasicTypeBits()
 {
-	cout << "bool: " << sizeof(bool) * 8 << endl;
-	cout << "char: " << sizeof(char) * 8 << endl;
-	cout << "int: " << sizeof(int) * 8 << endl;
-	cout << "long: " << sizeof(long) * 8 << endl;
-	cout << "long long: " << sizeof(long long) * 8 << endl;
+	cout << "bool: " << sizeof(bool) * 8 << endl;//8
+	cout << "char: " << sizeof(char) * 8 << endl;//8
+	cout << "int: " << sizeof(int) * 8 << endl;//32
+	cout << "1: " << sizeof(1) * 8 << endl;//32
+	cout << "4294967297: " << sizeof(4294967297) * 8 << endl;//64
+	//cout << "18446744073709551617: " << sizeof(18446744073709551617) * 8 << endl;//error: constant too big
+	cout << "long: " << sizeof(long) * 8 << endl;//32
+	cout << "long long: " << sizeof(long long) * 8 << endl;//64
+	cout << "float: " << sizeof(float) * 8 << endl;//32
+	cout << "double: " << sizeof(double) * 8 << endl;//64
+	cout << "1.1: " << sizeof(1.1) * 8 << endl;//64
+	enum ColorEnum
+	{
+		RED,BLUE,BLACK
+	};
+	cout << "enum: " << sizeof(ColorEnum) * 8 << endl;//32
+
+	class A
+	{
+	public:
+		int i;
+		union U
+		{
+			char buff[13];
+			int i;
+		}u;
+		void foo() {    }
+		typedef char* (*f)(void*);
+		enum{ red, green, blue } color;
+	}a;
+	cout << sizeof(A::U) << endl;
+	cout << sizeof(a)<<endl;
+
+	union UA
+	{
+		int a[5]; //20
+		char b; //1
+		double c; //8, 需要8字节对齐
+	};
+	cout << sizeof(UA) << endl;//24
+	struct B
+	{
+		int n; // 4字节
+		A a; // 24字节
+		char c[10]; // 10字节
+	};
+	cout << sizeof(B) << endl;//40
 }
 
 void MinMaxInt()
 {
 	int intBitCount = sizeof(int) * 8;
-	int maxInt = (1 << (intBitCount - 1)) - 1;
+	//int maxInt = (1 << (intBitCount - 1)) - 1;
 	int minInt = 1 << (intBitCount - 1);
+	int maxInt = minInt - 1;
 	cout << maxInt << "\t" << minInt << endl;
 	cout << (int)0x7FFFFFFF << "\t" << (int)0x80000000 << endl;
+}
+
+void ArrayInit()
+{
+	const int size = 3;
+	int arr1[size];//? ? ?
+	int arr2[size] = { 0 };//0 0 0
+	int* arr3 = new int[size];//? ? ?
+	int* arr4 = new int[size]();//0 0 0
+	int arr5[size] = { 1 };//1 0 0
 }
 
 void main()
@@ -79,8 +141,10 @@ void main()
 		//unsigned d = a * b;
 	}
 
-	//BasicTypeBits();
-	MinMaxInt();
+	BasicTypeBits();
+	//MinMaxInt();
+	//ArrayInit();
+	//f3();
 
 	finishClock = clock();
 	cout << endl << "Duration: " << (double) (finishClock - startClock) << " ms" << endl;
