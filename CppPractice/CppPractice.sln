@@ -39,6 +39,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ParsePath", "ParsePath\Pars
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "3Sum", "3Sum\3Sum.vcxproj", "{7179A8DA-D468-4F37-ABDD-0251ADBC8DAD}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AboutSizeOf", "AboutSizeOf\AboutSizeOf.vcxproj", "{D2A86A85-E317-4FC8-BECB-7404A23F3E33}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -117,6 +119,10 @@ Global
 		{7179A8DA-D468-4F37-ABDD-0251ADBC8DAD}.Debug|Win32.Build.0 = Debug|Win32
 		{7179A8DA-D468-4F37-ABDD-0251ADBC8DAD}.Release|Win32.ActiveCfg = Release|Win32
 		{7179A8DA-D468-4F37-ABDD-0251ADBC8DAD}.Release|Win32.Build.0 = Release|Win32
+		{D2A86A85-E317-4FC8-BECB-7404A23F3E33}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D2A86A85-E317-4FC8-BECB-7404A23F3E33}.Debug|Win32.Build.0 = Debug|Win32
+		{D2A86A85-E317-4FC8-BECB-7404A23F3E33}.Release|Win32.ActiveCfg = Release|Win32
+		{D2A86A85-E317-4FC8-BECB-7404A23F3E33}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

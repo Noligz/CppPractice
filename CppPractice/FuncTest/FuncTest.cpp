@@ -55,57 +55,6 @@ unsigned BitMulti(unsigned a, unsigned b)
 	return ret;
 }
 
-void BasicTypeBits()
-{
-	cout << "bool: " << sizeof(bool) * 8 << endl;//8
-	cout << "char: " << sizeof(char) * 8 << endl;//8
-	cout << "int: " << sizeof(int) * 8 << endl;//32
-	cout << "1: " << sizeof(1) * 8 << endl;//32
-	cout << "4294967297: " << sizeof(4294967297) * 8 << endl;//64
-	//cout << "18446744073709551617: " << sizeof(18446744073709551617) * 8 << endl;//error: constant too big
-	cout << "long: " << sizeof(long) * 8 << endl;//32
-	cout << "long long: " << sizeof(long long) * 8 << endl;//64
-	cout << "float: " << sizeof(float) * 8 << endl;//32
-	cout << "double: " << sizeof(double) * 8 << endl;//64
-	cout << "1.1: " << sizeof(1.1) * 8 << endl;//64
-	enum ColorEnum
-	{
-		RED,BLUE,BLACK
-	};
-	cout << "enum: " << sizeof(ColorEnum) * 8 << endl;//32
-
-	class A
-	{
-	public:
-		int i;
-		union U
-		{
-			char buff[13];
-			int i;
-		}u;
-		void foo() {    }
-		typedef char* (*f)(void*);
-		enum{ red, green, blue } color;
-	}a;
-	cout << sizeof(A::U) << endl;
-	cout << sizeof(a)<<endl;
-
-	union UA
-	{
-		int a[5]; //20
-		char b; //1
-		double c; //8, 需要8字节对齐
-	};
-	cout << sizeof(UA) << endl;//24
-	struct B
-	{
-		int n; // 4字节
-		A a; // 24字节
-		char c[10]; // 10字节
-	};
-	cout << sizeof(B) << endl;//40
-}
-
 void MinMaxInt()
 {
 	int intBitCount = sizeof(int) * 8;
@@ -114,6 +63,19 @@ void MinMaxInt()
 	int maxInt = minInt - 1;
 	cout << maxInt << "\t" << minInt << endl;
 	cout << (int)0x7FFFFFFF << "\t" << (int)0x80000000 << endl;
+}
+
+void f4()
+{
+	signed char a = 0xe0;
+	int b = a;
+	unsigned char c = a;
+	if (a == c)
+		a = c;
+	if (a == b)
+		a = b;
+	if (b == c)
+		b = c;
 }
 
 void ArrayInit()
@@ -141,10 +103,9 @@ void main()
 		//unsigned d = a * b;
 	}
 
-	BasicTypeBits();
 	//MinMaxInt();
 	//ArrayInit();
-	//f3();
+	//f4();
 
 	finishClock = clock();
 	cout << endl << "Duration: " << (double) (finishClock - startClock) << " ms" << endl;
