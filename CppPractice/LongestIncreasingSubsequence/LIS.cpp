@@ -2,7 +2,7 @@
 using namespace std;
 
 template<typename T>
-int LIS(T* arr, int length)
+int LIS(T* arr, int length)//O(n^2)
 {
 	if(arr == NULL || length < 0)
 		return -1;
@@ -59,9 +59,41 @@ int LIS(T* arr, int length)
 	return result;
 }
 
+template <typename T>
+int LIS2(T* arr, int length)//O(nlogn)
+{
+	if (arr == NULL || length <= 0)
+		return -1;
+
+	int len = 1;//当前已知最长递增子序列的长度
+	T* maxV = new T[length + 1];//maxV[i]=长度为i的递增子序列的最大值
+	maxV[1] = arr[0];
+	for (int i = 1; i < length; i++)
+	{
+		int left = 1;
+		int right = len;
+		T currV = arr[i];
+		//二分法，在maxV[]中找到小于currV的最大值
+		while (left <= right)
+		{
+			int mid = left + ((right - left) >> 1);
+			if (maxV[mid] >= currV)
+				right = mid - 1;
+			else
+				left = mid + 1;
+		}
+		maxV[right + 1] = currV;
+		if (right + 1 > len)
+			len++;
+	}
+	delete [] maxV;
+	return len;
+}
+
 void main()
 {
-	int a[9] = {3,5,9,1,3,5,7,8,9};
-	cout << LIS(a,9) << endl;
+	int a [] = { 3, 5, 9, 1, 3, 5, 7, 8, 9, 4 };
+	int length = sizeof(a) / sizeof(int);
+	cout << LIS2(a, length) << endl;
 	system("pause");
 }
