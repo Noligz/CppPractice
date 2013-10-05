@@ -91,12 +91,19 @@ void ArrayInit()
 void ValidPlusPLus()
 {
 	int a, b, c;
+	a = b = c = 0;
 	(++a)++;
 	// ++a++; //invalid
 	// (a + b)++; //invalid
 	// ++(a + b); //invalid
 	a++ + a++ + a++;
-	
+}
+
+void EnumValue()
+{
+	enum { a, b = 5, c, d = 4, e };
+	printf("a=%d, b=%d, c=%d, d=%d, e=%d\n", a, b, c, d, e);
+	//0,5,6,4,5
 }
 
 void main()
