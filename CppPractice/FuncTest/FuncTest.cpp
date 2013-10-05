@@ -88,6 +88,17 @@ void ArrayInit()
 	int arr5[size] = { 1 };//1 0 0
 }
 
+void ValidPlusPLus()
+{
+	int a, b, c;
+	(++a)++;
+	// ++a++; //invalid
+	// (a + b)++; //invalid
+	// ++(a + b); //invalid
+	a++ + a++ + a++;
+	
+}
+
 void main()
 {
 	clock_t startClock, finishClock;
