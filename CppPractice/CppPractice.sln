@@ -43,6 +43,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AboutSizeOf", "AboutSizeOf\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BinarySearch", "BinarySearch\BinarySearch.vcxproj", "{72E343B2-6B85-4AC7-9A13-316EE79B67CA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SegTree", "SegTree\SegTree.vcxproj", "{E9AC438E-B15D-40A1-93EE-DB5D82C4EBE5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -129,6 +131,10 @@ Global
 		{72E343B2-6B85-4AC7-9A13-316EE79B67CA}.Debug|Win32.Build.0 = Debug|Win32
 		{72E343B2-6B85-4AC7-9A13-316EE79B67CA}.Release|Win32.ActiveCfg = Release|Win32
 		{72E343B2-6B85-4AC7-9A13-316EE79B67CA}.Release|Win32.Build.0 = Release|Win32
+		{E9AC438E-B15D-40A1-93EE-DB5D82C4EBE5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E9AC438E-B15D-40A1-93EE-DB5D82C4EBE5}.Debug|Win32.Build.0 = Debug|Win32
+		{E9AC438E-B15D-40A1-93EE-DB5D82C4EBE5}.Release|Win32.ActiveCfg = Release|Win32
+		{E9AC438E-B15D-40A1-93EE-DB5D82C4EBE5}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
