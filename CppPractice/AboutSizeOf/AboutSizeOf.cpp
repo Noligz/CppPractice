@@ -21,6 +21,8 @@ void BasicTypeBits()
 	cout << "float: " << sizeof(float) * 8 << endl;//32
 	cout << "double: " << sizeof(double) * 8 << endl;//64
 	cout << "1.1: " << sizeof(1.1) * 8 << endl;//64
+	cout << "char&: " << sizeof(char&) * 8 << endl;//8
+	cout << "int&: " << sizeof(int&) * 8 << endl;//32
 }
 
 union U//24: max(20,1,8),再8字节对齐
@@ -95,12 +97,19 @@ void DeriveClass()
 	cout << "MultiV: " << sizeof(MultiV) << endl;//24,vc与gcc不同
 }
 
+void func(char(&p)[10])
+{
+	printf("%d\n", sizeof(p));// 10  
+}
+
 void main()
 {
 	BasicTypeBits();
 	AboutSizeof();
 	WrapUnion();
 	DeriveClass();
+	char a[10];
+	func(a);
 
 	system("pause");
 }
