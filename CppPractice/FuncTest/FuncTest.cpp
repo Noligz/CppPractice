@@ -85,7 +85,14 @@ void ArrayInit()
 	int arr2[size] = { 0 };//0 0 0
 	int* arr3 = new int[size];//? ? ?
 	int* arr4 = new int[size]();//0 0 0
+	//int* arr6 = new int[size](1);//compile eror
 	int arr5[size] = { 1 };//1 0 0
+	bool* arr7 = new bool[size]();
+
+	for (int i = 0; i < size; i++)
+	{
+		cout << arr7[i];
+	}
 }
 
 void ValidPlusPLus()
@@ -113,20 +120,10 @@ void main()
 
 	for (size_t i = 0; i < 100000000; i++)
 	{
-		////int b = abs(-345);
-		////int a=BitABS(-345);
-		////int c = IfABS(-345);
-		//int a = 3099, b = 6877;
-		////unsigned c = BitMulti(a, b);
-		//unsigned d = a * b;
 	}
 
-	//MinMaxInt();
-	//ArrayInit();
-	//f4();
 
 	finishClock = clock();
 	cout << endl << "Duration: " << (double) (finishClock - startClock) << " ms" << endl;
-
 	system("pause");
 }
