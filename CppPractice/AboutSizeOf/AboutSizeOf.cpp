@@ -102,6 +102,12 @@ void func(char(&p)[10])
 	printf("%d\n", sizeof(p));// 10  
 }
 
+struct ByteField
+{
+	short a, b;
+	unsigned int c : 2, d : 1;
+};//8
+
 void main()
 {
 	BasicTypeBits();
@@ -110,6 +116,8 @@ void main()
 	DeriveClass();
 	char a[10];
 	func(a);
+	
+	cout << "ByteField: "<< sizeof(ByteField)<<endl;
 
 	system("pause");
 }
