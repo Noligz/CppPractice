@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.20827.3
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FuncTest", "FuncTest\FuncTest.vcxproj", "{C532C3A1-6AFC-45F8-8C57-540D1A217926}"
 EndProject
@@ -44,6 +44,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BinarySearch", "BinarySearch\BinarySearch.vcxproj", "{72E343B2-6B85-4AC7-9A13-316EE79B67CA}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SegTree", "SegTree\SegTree.vcxproj", "{E9AC438E-B15D-40A1-93EE-DB5D82C4EBE5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LeastCommonAncestor", "LeastCommonAncestor\LeastCommonAncestor.vcxproj", "{F4005932-8AC0-4CEF-9B2E-1611495339FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -135,6 +137,10 @@ Global
 		{E9AC438E-B15D-40A1-93EE-DB5D82C4EBE5}.Debug|Win32.Build.0 = Debug|Win32
 		{E9AC438E-B15D-40A1-93EE-DB5D82C4EBE5}.Release|Win32.ActiveCfg = Release|Win32
 		{E9AC438E-B15D-40A1-93EE-DB5D82C4EBE5}.Release|Win32.Build.0 = Release|Win32
+		{F4005932-8AC0-4CEF-9B2E-1611495339FC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F4005932-8AC0-4CEF-9B2E-1611495339FC}.Debug|Win32.Build.0 = Debug|Win32
+		{F4005932-8AC0-4CEF-9B2E-1611495339FC}.Release|Win32.ActiveCfg = Release|Win32
+		{F4005932-8AC0-4CEF-9B2E-1611495339FC}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
